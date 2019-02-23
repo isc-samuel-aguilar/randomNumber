@@ -21,12 +21,9 @@ var randomNumber = (maxNum) => {
     let topErrorNum = 1000000;    
     let result = ""; //Sting to concatenate the random digits
 
-    //if (!isInt(maxNum) || parseInt(maxNum) === 0 || parseInt(maxNum)>=1000000 ){ //validate input throw isInt function 
-    if (!(maxNum => !isNaN(maxNum) && parseInt(Number(maxNum)) == maxNum && !isNaN(parseInt(maxNum, 10))) //lambda format function
-        || parseInt(maxNum) === 0 
-        || parseInt(maxNum) >= topErrorNum 
-    ){
-        throw "Wrong Input Value"
+    
+    if (!isInt(maxNum) || parseInt(maxNum) === 0 || parseInt(maxNum)>=1000000 ){ //validate input throw isInt function 
+        throw "Wrong Input Value";
     }
 
     let lastRandom; //to store the last randomDigit(), required to prevent 2 equal digits together in the result
@@ -72,3 +69,5 @@ function testRandomDigit(number){
     } 
     console.log('Loops:' + loopNum + "| Number" + number);
 }
+
+(maxNum => !isNaN(maxNum) && parseInt(Number(maxNum)) == maxNum && !isNaN(parseInt(maxNum, 10)))
